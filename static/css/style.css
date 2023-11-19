@@ -1,0 +1,116 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.logo {
+    display: block;
+    margin: 10px auto 20px; /* 10px top, auto left and right, 20px bottom */
+    width: auto; /* Mantém a largura original da imagem */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
+}
+.sjd {
+    margin-bottom: 50px;
+}
+
+.info-toggle {
+    width: 2%;
+    height: auto;
+    margin-left: 5px;
+    cursor: help;
+    vertical-align: middle; /* Alinha verticalmente com o texto do rótulo */
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 3px solid #333; /* Solid border */
+    border-radius: 10px; /* Rounded corners */
+    width: 50%; /* Width of the modal */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Shadow effect */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add {
+    width: 30px;
+    height: auto;
+}
+
+.button-add-date {
+    background-color: cadetblue;
+}
+
+.button-add-date:hover {
+    background-color: cadetblue;
+}
+

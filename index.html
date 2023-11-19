@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Prescrição de Transgressão Disciplinar</title>
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+</head>
+<body>
+    <img src="./static/images/7bpm.png" alt="7BPM Logo" class="logo">
+    <h1 class="sjd">Seção de Justiça e Disciplina (P-6)</h1>
+    <div class="container">
+        <h2>Cálculo de Prescrição de Transgressão Disciplinar</h2>
+        <label for="dataFato"><b>Data do Fato:</b></label>
+        <input type="date" id="dataFato" name="dataFato"><br><br>
+
+        <label for="naturezaTransgressao"><b>Natureza da Transgressão:</b></label>
+        <select id="naturezaTransgressao" name="naturezaTransgressao">
+            <option value="LEVE">LEVE</option>
+            <option value="MEDIA">MÉDIA</option>
+            <option value="GRAVE">GRAVE</option>
+        </select><br><br>
+
+        <label for="sindicancia"><b>Abertura de sindicância ou processo disciplinar?</b></label>
+        <input type="checkbox" id="sindicancia" name="sindicancia" onchange="toggleSindicanciaInput()"><br><br>
+
+        <div id="sindicanciaInput" style="display:none;">
+            <label for="dataSindicancia"><b>Data de Abertura:</b></label>
+            <input type="date" id="dataSindicancia" name="dataSindicancia"><br><br>
+        </div>
+
+
+        <label for="suspensaoJudicial"><b>Suspensão pelo fato ter sido investigado judicialmente ou em sede de inquérito policial?</b></label>
+        <input type="checkbox" id="suspensaoJudicial" name="suspensaoJudicial" onchange="toggleSuspensaoInput('judicial')">
+        <img src="static/images/inter.png" class="info-toggle" title="Essa suspensão NÃO ocorre automaticamente e sim a juízo da Autoridade Disciplinar, dessa forma depende da manifestação desta suspendendo o prazo prescricional." alt="Info">
+        <br><br>
+
+        <!-- Modal de Erro -->
+        <div id="modalErro" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="mensagemErro"></p>
+            </div>
+        </div>
+
+        <div id="suspensaoJudicialInput" style="display:none;">
+            <div id="periodosSuspensaoJudicial"></div>
+            <button class="button-add-date" onclick="adicionarPeriodoSuspensao('judicial')"><b>Adicionar nova data</b></button>
+            <br><br>
+        </div>
+
+
+        <label for="afastamentoAcusado"><b>Suspensão por afastamentos imperativos do acusado superiores a 15 dias?</b></label>
+        <input type="checkbox" id="afastamentoAcusado" name="afastamentoAcusado" onchange="toggleSuspensaoInput('acusado')">
+        <img src="static/images/inter.png" class="info-toggle" title="Essa suspensão ocorre de forma automática e NÃO depende da manifestação da Autoridade Disciplinar. Lembre-se, Imperativo é igual impositivo, que expressa uma ordem com autoridade, quando o envolvido não tem escolha. Tal conceito não se encaixa no instituto das férias, Licença Especial ou outro afastamento que depende da iniciativa do pleito." alt="Info">
+        <br><br>
+        <div id="suspensaoAcusadoInput" style="display:none;">
+            <div id="periodosSuspensaoAcusado"></div>
+            <button class="button-add-date" onclick="adicionarPeriodoSuspensao('acusado')"><b>Adicionar nova data</b></button>
+            <br><br>
+        </div>
+
+        <button onclick="calcularPrescricao()"><b>Calcular Prescrição</b></button>
+        <h3 id="resultado"></h3>
+    </div>
+
+    <script src="./static/js/script.js"></script>
+</body>
+</html>
